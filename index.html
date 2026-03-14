@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Never Miss Another Call | AI Automation Blitz</title>
+    <title>Never Miss Another Call | Murray's AI Automation</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -812,6 +812,64 @@
             margin-top: 8px;
         }
 
+        /* ===== DEMO CTA SECTION ===== */
+        .demo-cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .demo-cta h2 {
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+
+        .demo-cta p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .demo-cta .btn-demo {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 22px 56px;
+            font-size: 1.375rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 12px;
+            background: var(--white);
+            color: #059669;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .demo-cta .btn-demo:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .demo-cta .btn-demo::after {
+            content: ' \2192';
+            margin-left: 10px;
+            transition: transform 0.2s ease;
+        }
+
+        .demo-cta .btn-demo:hover::after {
+            transform: translateX(4px);
+        }
+
+        .demo-cta-sub {
+            margin-top: 20px;
+            font-size: 0.9rem !important;
+            color: rgba(255, 255, 255, 0.7) !important;
+        }
+
         /* ===== PRICING SECTION ===== */
         .pricing {
             padding: 100px 0;
@@ -823,146 +881,158 @@
             margin-bottom: 60px;
         }
 
-        .urgency-banner {
-            background: var(--danger);
-            color: var(--white);
-            padding: 16px 24px;
-            border-radius: 12px;
-            text-align: center;
-            margin-bottom: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 16px;
-        }
-
-        .urgency-banner-icon {
-            font-size: 1.5rem;
-        }
-
-        .urgency-banner-text {
-            font-weight: 600;
-        }
-
-        .urgency-banner-timer {
-            background: rgba(0, 0, 0, 0.2);
-            padding: 8px 16px;
-            border-radius: 8px;
-            font-family: monospace;
-            font-size: 1.25rem;
-            font-weight: 700;
-        }
-
-        .pricing-card {
-            max-width: 600px;
+        .pricing-tiers {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            max-width: 1100px;
             margin: 0 auto;
+        }
+
+        .pricing-tier {
             background: var(--white);
-            border: 3px solid var(--primary);
+            border: 2px solid var(--gray-200);
             border-radius: 24px;
             overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pricing-tier:hover {
+            transform: translateY(-4px);
             box-shadow: var(--shadow-xl);
         }
 
-        .pricing-card-header {
-            background: var(--gradient-primary);
-            color: var(--white);
-            padding: 40px;
+        .pricing-tier.featured {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-xl), 0 0 0 4px rgba(37, 99, 235, 0.1);
+            transform: scale(1.04);
+        }
+
+        .pricing-tier.featured:hover {
+            transform: scale(1.04) translateY(-4px);
+        }
+
+        .pricing-tier-header {
+            padding: 32px 28px 24px;
             text-align: center;
-        }
-
-        .pricing-card-badge {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 6px 16px;
-            border-radius: 100px;
-            font-size: 0.875rem;
-            font-weight: 600;
-            margin-bottom: 16px;
-        }
-
-        .pricing-card-header h3 {
-            color: var(--white);
-            font-size: 1.75rem;
-            margin-bottom: 16px;
-        }
-
-        .pricing-card-price {
-            display: flex;
-            align-items: baseline;
-            justify-content: center;
-            gap: 8px;
-        }
-
-        .pricing-card-price .currency {
-            font-size: 2rem;
-            font-weight: 700;
-        }
-
-        .pricing-card-price .amount {
-            font-size: 4rem;
-            font-weight: 800;
-            line-height: 1;
-        }
-
-        .pricing-card-price-note {
-            font-size: 0.875rem;
-            color: rgba(255, 255, 255, 0.8);
-            margin-top: 8px;
-        }
-
-        .pricing-card-body {
-            padding: 40px;
-        }
-
-        .pricing-includes {
-            margin-bottom: 32px;
-        }
-
-        .pricing-includes h4 {
-            font-size: 1.125rem;
-            margin-bottom: 20px;
-            color: var(--gray-700);
-        }
-
-        .pricing-includes ul {
-            list-style: none;
-        }
-
-        .pricing-includes li {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            padding: 12px 0;
             border-bottom: 1px solid var(--gray-100);
         }
 
-        .pricing-includes li:last-child {
+        .pricing-tier.featured .pricing-tier-header {
+            background: var(--gradient-primary);
+            border-bottom: none;
+        }
+
+        .pricing-tier.featured .pricing-tier-header h3,
+        .pricing-tier.featured .pricing-tier-header .pricing-tier-name {
+            color: var(--white);
+        }
+
+        .pricing-tier.featured .pricing-tier-header .pricing-tier-price {
+            color: var(--white);
+        }
+
+        .pricing-tier.featured .pricing-tier-header .pricing-tier-period {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .pricing-tier-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.25);
+            color: var(--white);
+            padding: 4px 14px;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .pricing-tier-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 12px;
+        }
+
+        .pricing-tier-price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--gray-900);
+            line-height: 1;
+        }
+
+        .pricing-tier-period {
+            font-size: 1rem;
+            color: var(--gray-500);
+            margin-top: 4px;
+        }
+
+        .pricing-tier-body {
+            padding: 28px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pricing-tier-features {
+            list-style: none;
+            margin-bottom: 28px;
+            flex: 1;
+        }
+
+        .pricing-tier-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 10px 0;
+            font-size: 0.95rem;
+            color: var(--gray-700);
+            border-bottom: 1px solid var(--gray-50);
+        }
+
+        .pricing-tier-features li:last-child {
             border-bottom: none;
         }
 
         .pricing-check {
-            width: 24px;
-            height: 24px;
-            min-width: 24px;
+            width: 22px;
+            height: 22px;
+            min-width: 22px;
             background: var(--success);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--white);
-            font-size: 14px;
+            font-size: 12px;
         }
 
-        .pricing-includes li span {
-            color: var(--gray-700);
+        .pricing-tier-cta {
+            text-align: center;
+        }
+
+        .pricing-tier-cta .btn {
+            width: 100%;
+            margin-bottom: 12px;
+        }
+
+        .pricing-tier-cta p {
+            font-size: 0.8rem;
+            color: var(--gray-500);
         }
 
         .pricing-guarantee {
+            max-width: 700px;
+            margin: 48px auto 0;
             background: var(--gray-50);
-            border-radius: 12px;
-            padding: 24px;
+            border-radius: 16px;
+            padding: 32px;
             text-align: center;
-            margin-bottom: 32px;
         }
 
         .pricing-guarantee-icon {
@@ -971,60 +1041,29 @@
         }
 
         .pricing-guarantee h4 {
-            font-size: 1rem;
+            font-size: 1.125rem;
             margin-bottom: 8px;
         }
 
         .pricing-guarantee p {
-            font-size: 0.875rem;
+            font-size: 0.95rem;
             color: var(--gray-600);
         }
 
-        .pricing-cta {
-            text-align: center;
-        }
+        @media (max-width: 900px) {
+            .pricing-tiers {
+                grid-template-columns: 1fr;
+                max-width: 480px;
+            }
 
-        .pricing-cta .btn {
-            width: 100%;
-            margin-bottom: 16px;
-        }
+            .pricing-tier.featured {
+                transform: none;
+                order: -1;
+            }
 
-        .pricing-cta p {
-            font-size: 0.875rem;
-            color: var(--gray-500);
-        }
-
-        .payment-options {
-            margin-top: 24px;
-            padding-top: 24px;
-            border-top: 1px solid var(--gray-200);
-        }
-
-        .payment-options h4 {
-            font-size: 0.875rem;
-            color: var(--gray-500);
-            margin-bottom: 12px;
-            text-align: center;
-        }
-
-        .payment-option {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 16px;
-            background: var(--gray-50);
-            border-radius: 8px;
-            margin-bottom: 8px;
-        }
-
-        .payment-option-name {
-            font-weight: 500;
-            color: var(--gray-700);
-        }
-
-        .payment-option-price {
-            font-weight: 600;
-            color: var(--gray-900);
+            .pricing-tier.featured:hover {
+                transform: translateY(-4px);
+            }
         }
 
         /* ===== FAQ SECTION ===== */
@@ -1247,7 +1286,7 @@
                     What if every call was answered instantly, 24/7, by an AI that books appointments, 
                     qualifies leads, and never takes a sick day?
                 </p>
-                <a href="https://wa.me/19787580690?text=Hi%20Eric%2C%20I%27m%20interested%20in%20AI%20automation%20for%20my%20business" class="btn btn-accent btn-large btn-arrow" target="_blank">Stop Losing Money Today</a>
+                <a href="https://wa.me/19787580690?text=I%27m%20interested%20in%20the%20AI%20receptionist%20demo" class="btn btn-accent btn-large btn-arrow" target="_blank">Book Your Free 15-Minute Demo</a>
                 
                 <div class="hero-stats">
                     <div class="hero-stat">
@@ -1613,96 +1652,150 @@
         </div>
     </section>
 
+    <!-- DEMO CTA SECTION -->
+    <section class="demo-cta" id="demo">
+        <div class="container">
+            <h2>See It In Action — Free</h2>
+            <p>Book a free 15-minute demo and watch the AI receptionist handle a live call for your business. No pitch, no pressure.</p>
+            <a href="https://wa.me/19787580690?text=I%27m%20interested%20in%20the%20AI%20receptionist%20demo" class="btn-demo" target="_blank">Book Your Free 15-Minute Demo</a>
+            <p class="demo-cta-sub">No credit card required. We'll call you at the time you pick.</p>
+        </div>
+    </section>
+
     <!-- PRICING SECTION -->
     <section class="pricing" id="pricing">
         <div class="container">
             <div class="pricing-header">
-                <h2>Stop the Revenue Leak Today</h2>
-                <p>One investment. Lifetime of captured opportunities.</p>
+                <h2>Get Started — Simple Monthly Pricing</h2>
+                <p>No setup fees. No long-term contracts. Cancel anytime.</p>
             </div>
-            
-            <div class="container-narrow">
-                <div class="urgency-banner">
-                    <span class="urgency-banner-icon">⏰</span>
-                    <span class="urgency-banner-text">Founder's Pricing Ends Soon</span>
-                    <span class="urgency-banner-timer" id="countdown">47:23:59</span>
-                </div>
-                
-                <div class="pricing-card">
-                    <div class="pricing-card-header">
-                        <span class="pricing-card-badge">Most Popular</span>
-                        <h3>AI Automation Blitz</h3>
-                        <div class="pricing-card-price">
-                            <span class="currency">$</span>
-                            <span class="amount">4,997</span>
-                        </div>
-                        <p class="pricing-card-price-note">One-time investment (not monthly)</p>
+
+            <div class="pricing-tiers">
+                <!-- STARTER -->
+                <div class="pricing-tier">
+                    <div class="pricing-tier-header">
+                        <div class="pricing-tier-name">Starter</div>
+                        <div class="pricing-tier-price">$1,500</div>
+                        <div class="pricing-tier-period">per month</div>
                     </div>
-                    
-                    <div class="pricing-card-body">
-                        <div class="pricing-includes">
-                            <h4>Everything Included:</h4>
-                            <ul>
-                                <li>
-                                    <span class="pricing-check">✓</span>
-                                    <span>Deep-dive business audit & opportunity mapping</span>
-                                </li>
-                                <li>
-                                    <span class="pricing-check">✓</span>
-                                    <span>Custom AI receptionist built for your business</span>
-                                </li>
-                                <li>
-                                    <span class="pricing-check">✓</span>
-                                    <span>Automated appointment booking system</span>
-                                </li>
-                                <li>
-                                    <span class="pricing-check">✓</span>
-                                    <span>Review generation automation</span>
-                                </li>
-                                <li>
-                                    <span class="pricing-check">✓</span>
-                                    <span>Full integration with your existing tools</span>
-                                </li>
-                                <li>
-                                    <span class="pricing-check">✓</span>
-                                    <span>Complete documentation & video training</span>
-                                </li>
-                                <li>
-                                    <span class="pricing-check">✓</span>
-                                    <span>30 days of priority Slack support</span>
-                                </li>
-                            </ul>
-                        </div>
-                        
-                        <div class="pricing-guarantee">
-                            <div class="pricing-guarantee-icon">🛡️</div>
-                            <h4>30-Day Results Guarantee</h4>
-                            <p>If your automations don't save you at least 10 hours per week within 30 days, 
-                            we'll build additional automations at no charge until they do. No risk.</p>
-                        </div>
-                        
-                        <div class="pricing-cta">
-                            <a href="https://wa.me/19787580690?text=Hi%20Eric%2C%20I%27d%20like%20to%20claim%20a%20spot%20for%20AI%20automation" class="btn btn-primary btn-large btn-arrow" target="_blank">Claim Your Spot Now</a>
-                            <p>Only 7 spots available this month</p>
-                        </div>
-                        
-                        <div class="payment-options">
-                            <h4>Flexible Payment Options</h4>
-                            <div class="payment-option">
-                                <span class="payment-option-name">Pay in Full (Best Value)</span>
-                                <span class="payment-option-price">$4,997</span>
-                            </div>
-                            <div class="payment-option">
-                                <span class="payment-option-name">2 Monthly Payments</span>
-                                <span class="payment-option-price">$2,750 x 2</span>
-                            </div>
-                            <div class="payment-option">
-                                <span class="payment-option-name">3 Monthly Payments</span>
-                                <span class="payment-option-price">$1,899 x 3</span>
-                            </div>
+                    <div class="pricing-tier-body">
+                        <ul class="pricing-tier-features">
+                            <li>
+                                <span class="pricing-check">✓</span>
+                                <span>AI receptionist (24/7 call answering)</span>
+                            </li>
+                            <li>
+                                <span class="pricing-check">✓</span>
+                                <span>Missed call text-back</span>
+                            </li>
+                            <li>
+                                <span class="pricing-check">✓</span>
+                                <span>Automated review requests</span>
+                            </li>
+                            <li>
+                                <span class="pricing-check">✓</span>
+                                <span>Basic call reporting</span>
+                            </li>
+                            <li>
+                                <span class="pricing-check">✓</span>
+                                <span>Email support</span>
+                            </li>
+                        </ul>
+                        <div class="pricing-tier-cta">
+                            <a href="https://wa.me/19787580690?text=I%27m%20interested%20in%20the%20AI%20receptionist%20demo" class="btn btn-primary btn-arrow" target="_blank">Get Started</a>
+                            <p>Perfect for solo operators</p>
                         </div>
                     </div>
                 </div>
+
+                <!-- GROWTH (Featured) -->
+                <div class="pricing-tier featured">
+                    <div class="pricing-tier-header">
+                        <span class="pricing-tier-badge">Most Popular</span>
+                        <div class="pricing-tier-name">Growth</div>
+                        <div class="pricing-tier-price">$3,500</div>
+                        <div class="pricing-tier-period">per month</div>
+                    </div>
+                    <div class="pricing-tier-body">
+                        <ul class="pricing-tier-features">
+                            <li>
+                                <span class="pricing-check">✓</span>
+                                <span>Everything in Starter</span>
+                            </li>
+                            <li>
+                                <span class="pricing-check">✓</span>
+                                <span>Lead qualification &amp; scoring</span>
+                            </li>
+                            <li>
+                                <span class="pricing-check">✓</span>
+                                <span>Dispatch assist &amp; scheduling</span>
+                            </li>
+                            <li>
+                                <span class="pricing-check">✓</span>
+                                <span>Weekly performance reports</span>
+                            </li>
+                            <li>
+                                <span class="pricing-check">✓</span>
+                                <span>CRM &amp; calendar integrations</span>
+                            </li>
+                            <li>
+                                <span class="pricing-check">✓</span>
+                                <span>Priority Slack support</span>
+                            </li>
+                        </ul>
+                        <div class="pricing-tier-cta">
+                            <a href="https://wa.me/19787580690?text=I%27m%20interested%20in%20the%20AI%20receptionist%20demo" class="btn btn-primary btn-large btn-arrow" target="_blank">Get Started</a>
+                            <p>Best for growing teams (3-15 techs)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SCALE -->
+                <div class="pricing-tier">
+                    <div class="pricing-tier-header">
+                        <div class="pricing-tier-name">Scale</div>
+                        <div class="pricing-tier-price">$7,500</div>
+                        <div class="pricing-tier-period">per month</div>
+                    </div>
+                    <div class="pricing-tier-body">
+                        <ul class="pricing-tier-features">
+                            <li>
+                                <span class="pricing-check">✓</span>
+                                <span>Everything in Growth</span>
+                            </li>
+                            <li>
+                                <span class="pricing-check">✓</span>
+                                <span>Full operations management</span>
+                            </li>
+                            <li>
+                                <span class="pricing-check">✓</span>
+                                <span>Dedicated account manager</span>
+                            </li>
+                            <li>
+                                <span class="pricing-check">✓</span>
+                                <span>Priority support (same-day)</span>
+                            </li>
+                            <li>
+                                <span class="pricing-check">✓</span>
+                                <span>Custom automations &amp; workflows</span>
+                            </li>
+                            <li>
+                                <span class="pricing-check">✓</span>
+                                <span>Multi-location support</span>
+                            </li>
+                        </ul>
+                        <div class="pricing-tier-cta">
+                            <a href="https://wa.me/19787580690?text=I%27m%20interested%20in%20the%20AI%20receptionist%20demo" class="btn btn-primary btn-arrow" target="_blank">Get Started</a>
+                            <p>Built for multi-location operations</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pricing-guarantee">
+                <div class="pricing-guarantee-icon">🛡️</div>
+                <h4>30-Day Money-Back Guarantee</h4>
+                <p>Try it risk-free. If you don't see measurable results within 30 days, get a full refund. No questions asked.</p>
             </div>
         </div>
     </section>
@@ -1751,9 +1844,9 @@
                     </button>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            You have full ownership of everything we build. We provide complete documentation so you 
-                            can make simple changes yourself. For complex modifications, we offer one-time change 
-                            requests ($150-500) or a monthly retainer ($497/month) for ongoing optimization.
+                            Everything is included in your monthly plan. Need changes or new automations?
+                            Just ask. Growth and Scale plans include priority support with direct Slack access.
+                            You can upgrade, downgrade, or cancel at any time.
                         </div>
                     </div>
                 </div>
@@ -1779,9 +1872,9 @@
                     </button>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            The $4,997 covers everything we build. Ongoing costs are minimal: typically $5-50/month 
-                            for automation platforms and AI usage, depending on your call volume. Many tools have 
-                            free tiers. We design systems to minimize ongoing costs.
+                            Your monthly plan covers everything: the AI receptionist, automations, integrations,
+                            support, and all platform costs. There are no hidden fees. Plans start at $1,500/mo
+                            and you can cancel anytime with no penalty.
                         </div>
                     </div>
                 </div>
@@ -1807,9 +1900,9 @@
                     </button>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            We guarantee it will work, or you don't pay. If we can't find automation opportunities 
-                            worth at least $4,997 in annual value during discovery, we'll tell you upfront. If after 
-                            30 days you're not seeing tangible results, we offer a full refund. No questions, no hassle.
+                            We offer a 30-day money-back guarantee on every plan. If you don't see measurable
+                            results within your first month, we'll refund you in full. No questions, no hassle.
+                            You can also cancel anytime with no penalty.
                         </div>
                     </div>
                 </div>
@@ -1839,7 +1932,7 @@
                 Your competitors are answering. Your customers are calling. The only question is: 
                 will they reach you, or someone else?
             </p>
-            <a href="https://wa.me/19787580690?text=Hi%2C%20I%20want%20to%20stop%20missing%20calls.%20Tell%20me%20more%20about%20AI%20automation" class="btn btn-accent btn-large btn-arrow" target="_blank">Stop Missing Calls Forever</a>
+            <a href="https://wa.me/19787580690?text=I%27m%20interested%20in%20the%20AI%20receptionist%20demo" class="btn btn-accent btn-large btn-arrow" target="_blank">Book Your Free 15-Minute Demo</a>
             
             <div class="final-cta-stats">
                 <div class="final-cta-stat">
@@ -1861,9 +1954,16 @@
     <!-- FOOTER -->
     <footer>
         <div class="container">
-            <p>&copy; 2026 AI Automation Blitz. All rights reserved.</p>
+            <p style="font-size: 1rem; color: var(--gray-300); margin-bottom: 12px; font-weight: 600;">Murray's AI Automation</p>
+            <p style="margin-bottom: 8px;">
+                <a href="tel:+19787580690" style="color: var(--accent); font-weight: 600;">(978) 758-0690</a>
+                &nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="mailto:eric@murraysgds.com" style="color: var(--accent); font-weight: 600;">eric@murraysgds.com</a>
+            </p>
+            <p style="margin-bottom: 12px; color: var(--gray-500);">Chelmsford, MA</p>
+            <p>&copy; 2026 Murray's AI Automation. All rights reserved.</p>
             <p style="margin-top: 8px;">
-                <a href="#">Privacy Policy</a> &nbsp;|&nbsp; <a href="#">Terms of Service</a> &nbsp;|&nbsp; <a href="#">Contact</a>
+                <a href="#">Privacy Policy</a> &nbsp;|&nbsp; <a href="#">Terms of Service</a>
             </p>
         </div>
     </footer>
@@ -1909,41 +2009,6 @@
                 }
             });
         });
-        
-        // Countdown Timer
-        function updateCountdown() {
-            // Set to 47 hours, 59 minutes, 59 seconds from now (for demo)
-            const now = new Date();
-            const endTime = new Date(now.getTime() + (47 * 60 * 60 * 1000) + (59 * 60 * 1000) + (59 * 1000));
-            
-            // Store end time in localStorage for persistence
-            let storedEndTime = localStorage.getItem('blitzCountdownEnd');
-            if (!storedEndTime) {
-                localStorage.setItem('blitzCountdownEnd', endTime.getTime());
-                storedEndTime = endTime.getTime();
-            }
-            
-            const targetTime = new Date(parseInt(storedEndTime));
-            const diff = targetTime - new Date();
-            
-            if (diff <= 0) {
-                document.getElementById('countdown').textContent = '00:00:00';
-                return;
-            }
-            
-            const hours = Math.floor(diff / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-            
-            document.getElementById('countdown').textContent = 
-                String(hours).padStart(2, '0') + ':' + 
-                String(minutes).padStart(2, '0') + ':' + 
-                String(seconds).padStart(2, '0');
-        }
-        
-        // Update countdown every second
-        updateCountdown();
-        setInterval(updateCountdown, 1000);
         
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
